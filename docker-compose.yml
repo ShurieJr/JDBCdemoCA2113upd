@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: postgres_CA2113
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: DBCA2113
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4_CA2113
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@just.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
